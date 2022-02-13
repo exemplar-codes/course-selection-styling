@@ -20,7 +20,10 @@ const CourseInput = (props) => {
       setTimeout(() => {
         setIsEmptyInput(false);
       }, 700);
-    } else props.onAddGoal(enteredValue);
+    } else {
+      props.onAddGoal(enteredValue);
+      setEnteredValue("");
+    }
   };
 
   return (
@@ -29,6 +32,7 @@ const CourseInput = (props) => {
         <label>Course Goal</label>
         <input
           type="text"
+          value={enteredValue}
           onChange={goalInputChangeHandler}
           placeholder={isEmptyInput ? "Empty input!!" : ""}
           style={isEmptyInput ? { backgroundColor: "#EE6666" } : {}}
