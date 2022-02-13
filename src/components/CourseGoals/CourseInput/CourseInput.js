@@ -9,7 +9,8 @@ const CourseInput = (props) => {
 
   const goalInputChangeHandler = (event) => {
     setEnteredValue(event.target.value);
-    setIsEmptyInput(false);
+    setIsEmptyInput(false); // when input starts being entered after empty input,
+    // immediately remove red background immediately
   };
 
   const formSubmitHandler = (event) => {
@@ -35,7 +36,11 @@ const CourseInput = (props) => {
           value={enteredValue}
           onChange={goalInputChangeHandler}
           placeholder={isEmptyInput ? "Empty input!!" : ""}
-          style={isEmptyInput ? { backgroundColor: "#EE6666" } : {}}
+          style={
+            isEmptyInput
+              ? { borderColor: "#EE6666", backgroundColor: "salmon" }
+              : {}
+          }
         />
       </div>
       <Button type="submit">Add Goal</Button>
