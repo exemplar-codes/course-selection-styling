@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "files.exclude": {
+        // Node modules files
+        "node_modules/": true,
+        "package-lock.json": true,
+        "package.json": true,
+        // misc
+        "**/README*": true
+    }
+}
