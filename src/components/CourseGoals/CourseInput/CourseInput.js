@@ -29,18 +29,13 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="form-control">
+      <div className={`form-control${isEmptyInput ? " invalid" : ""}`}>
         <label>Course Goal</label>
         <input
           type="text"
           value={enteredValue}
           onChange={goalInputChangeHandler}
           placeholder={isEmptyInput ? "Empty input!!" : ""}
-          style={
-            isEmptyInput
-              ? { borderColor: "#EE6666", backgroundColor: "salmon" }
-              : {}
-          }
         />
       </div>
       <Button type="submit">Add Goal</Button>
